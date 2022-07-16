@@ -7,7 +7,17 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "android:release": "react-native run-android --variant=release",
+    "build": "cd ./android && ./gradlew app:assembleRelease && cd ..",
+    "android:bundle": "cd ./android && ./gradlew bundleRelease && cd ..",
+    "apk": "cd ./android/app/build/outputs/apk/release && open . ",
+    "pods": "cd ./ios && pod install",
+    "menu": "adb shell input keyevent KEYCODE_MENU",
+    "clear_pod": "cd ios && rm -rf ~/Library/Caches/CocoaPods && rm -rf Pods && pod install && cd ..",
+    "xcode": "xed -b ios",
+    "tcp": "adb reverse tcp:8081 tcp:8081",
+    "clean": "cd android && ./gradlew clean"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.7",
